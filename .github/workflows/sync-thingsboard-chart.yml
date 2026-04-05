@@ -1,0 +1,166 @@
+name: Sync and Publish ThingsBoard Helm Chart
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-thingsboard-chart
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPO: https://github.com/thingsboard/thingsboard-ce-k8s.git
+  UPSTREAM_BRANCH: master
+  UPSTREAM_CHART_PATH: helm/thingsboard
+  LOCAL_CHART_PATH: charts/thingsboard
+  PAGES_DIR: docs
+  CHART_NAME: thingsboard
+  REPO_URL: https://xlight.github.io/thingsboard-helm-mirror
+
+jobs:
+  sync-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout mirror repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.15.4
+
+      - name: Install yq
+        run: |
+          set -euo pipefail
+          YQ_VERSION="v4.44.3"
+          curl -fsSL -o /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"
+          chmod +x /usr/local/bin/yq
+          yq --version
+
+      - name: Clone upstream chart
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/upstream-thingsboard
+          git clone --depth 1 --branch "${UPSTREAM_BRANCH}" "${UPSTREAM_REPO}" /tmp/upstream-thingsboard
+          test -d "/tmp/upstream-thingsboard/${UPSTREAM_CHART_PATH}"
+
+      - name: Sync chart sources
+        run: |
+          set -euo pipefail
+          mkdir -p "${LOCAL_CHART_PATH}"
+          rm -rf "${LOCAL_CHART_PATH}"
+          mkdir -p "$(dirname "${LOCAL_CHART_PATH}")"
+          cp -R "/tmp/upstream-thingsboard/${UPSTREAM_CHART_PATH}" "${LOCAL_CHART_PATH}"
+
+      - name: Detect source changes
+        id: detect_changes
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- "${LOCAL_CHART_PATH}"; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          else
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Stop early when no chart changes
+        if: steps.detect_changes.outputs.changed != 'true'
+        run: |
+          echo "No upstream chart changes detected. Skipping publish."
+
+      - name: Prepare docs directory
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p "${PAGES_DIR}"
+
+      - name: Resolve chart version
+        if: steps.detect_changes.outputs.changed == 'true'
+        id: chart_version
+        run: |
+          set -euo pipefail
+
+          CHART_FILE="${LOCAL_CHART_PATH}/Chart.yaml"
+          BASE_VERSION="$(yq -r '.version' "${CHART_FILE}")"
+
+          if [ -z "${BASE_VERSION}" ] || [ "${BASE_VERSION}" = "null" ]; then
+            echo "Chart.yaml version is missing"
+            exit 1
+          fi
+
+          if [ -f "${PAGES_DIR}/index.yaml" ]; then
+            EXISTING_VERSIONS="$(yq -r '.entries["'"${CHART_NAME}"'"][].version // ""' "${PAGES_DIR}/index.yaml" 2>/dev/null || true)"
+          else
+            EXISTING_VERSIONS=""
+          fi
+
+          TARGET_VERSION="${BASE_VERSION}"
+
+          if printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}"; then
+            NEXT_SUFFIX=1
+            while printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}-${NEXT_SUFFIX}"; do
+              NEXT_SUFFIX=$((NEXT_SUFFIX + 1))
+            done
+            TARGET_VERSION="${BASE_VERSION}-${NEXT_SUFFIX}"
+          fi
+
+          yq -i '.version = "'"${TARGET_VERSION}"'"' "${CHART_FILE}"
+
+          echo "base_version=${BASE_VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "target_version=${TARGET_VERSION}" >> "${GITHUB_OUTPUT}"
+
+      - name: Build chart dependencies
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          helm dependency update "${LOCAL_CHART_PATH}"
+
+      - name: Lint chart
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          helm lint "${LOCAL_CHART_PATH}"
+
+      - name: Package chart
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          helm package "${LOCAL_CHART_PATH}" --destination "${PAGES_DIR}"
+
+      - name: Generate Helm repository index
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          if [ -f "${PAGES_DIR}/index.yaml" ]; then
+            helm repo index "${PAGES_DIR}" \
+              --url "${REPO_URL}" \
+              --merge "${PAGES_DIR}/index.yaml"
+          else
+            helm repo index "${PAGES_DIR}" \
+              --url "${REPO_URL}"
+          fi
+
+      - name: Commit and push changes
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "${LOCAL_CHART_PATH}" "${PAGES_DIR}"
+
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+
+          TARGET_VERSION="${{ steps.chart_version.outputs.target_version }}"
+          git commit -m "chore: sync ${CHART_NAME} chart to ${TARGET_VERSION}"
+          git push

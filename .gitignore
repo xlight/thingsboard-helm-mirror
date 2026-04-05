@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Helm dependency cache / vendored dependencies
+charts/thingsboard/charts/
+
+# Helm build artifacts outside published docs
+*.tgz
+
+# Keep published Helm repo artifacts under docs/
+!docs/
+!docs/*.tgz
+!docs/index.yaml
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
