@@ -188,17 +188,10 @@ jobs:
 
             helm pull "${NAME}-repo/${NAME}" --version "${AVAILABLE_VERSION}" --destination "${LOCAL_CHART_PATH}/charts"
 
-            if [ -n "${CONDITION}" ] && [ "${CONDITION}" != "null" ]; then
-              yq -i '
-                (.dependencies[] | select(.name == "'"${NAME}"'") | .version) = "'"${AVAILABLE_VERSION}"'" |
-                (.dependencies[] | select(.name == "'"${NAME}"'") | .repository) = "file://charts"
-              ' "${CHART_FILE}"
-            else
-              yq -i '
-                (.dependencies[] | select(.name == "'"${NAME}"'") | .version) = "'"${AVAILABLE_VERSION}"'" |
-                (.dependencies[] | select(.name == "'"${NAME}"'") | .repository) = "file://charts"
-              ' "${CHART_FILE}"
-            fi
+            yq -i '
+              (.dependencies[] | select(.name == "'"${NAME}"'") | .version) = "'"${AVAILABLE_VERSION}"'" |
+              (.dependencies[] | select(.name == "'"${NAME}"'") | .repository) = "'"${REPOSITORY}"'"
+            ' "${CHART_FILE}"
           done < <(yq -r '.dependencies[] | [.name, .version, .repository, (.condition // "")] | @tsv' "${CHART_FILE}")
 
       - name: Build chart metadata
