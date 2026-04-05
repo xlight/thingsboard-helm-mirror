@@ -20,6 +20,8 @@ env:
   PAGES_DIR: docs
   CHART_NAME: thingsboard
   REPO_URL: https://xlight.github.io/thingsboard-helm-mirror
+  HELM_VERSION: v3.15.4
+  YQ_VERSION: v4.44.3
 
 jobs:
   sync-and-publish:
@@ -34,15 +36,17 @@ jobs:
       - name: Setup Helm
         uses: azure/setup-helm@v4
         with:
-          version: v3.15.4
+          version: ${{ env.HELM_VERSION }}
 
-      - name: Install yq
+      - name: Install yq and jq
         run: |
           set -euo pipefail
-          YQ_VERSION="v4.44.3"
           curl -fsSL -o /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"
           chmod +x /usr/local/bin/yq
+          sudo apt-get update
+          sudo apt-get install -y jq
           yq --version
+          jq --version
 
       - name: Clone upstream chart
         run: |
@@ -141,11 +145,67 @@ jobs:
           echo "base_version=${BASE_VERSION}" >> "${GITHUB_OUTPUT}"
           echo "target_version=${TARGET_VERSION}" >> "${GITHUB_OUTPUT}"
 
-      - name: Build chart dependencies
+      - name: Try to build chart dependencies from upstream repositories
         if: steps.detect_changes.outputs.changed == 'true'
+        id: dependency_update
+        continue-on-error: true
         run: |
           set -euo pipefail
           helm dependency update "${LOCAL_CHART_PATH}"
+
+      - name: Vendor fallback dependencies when upstream versions are unavailable
+        if: steps.detect_changes.outputs.changed == 'true' && steps.dependency_update.outcome == 'failure'
+        run: |
+          set -euo pipefail
+
+          CHART_FILE="${LOCAL_CHART_PATH}/Chart.yaml"
+          mkdir -p "${LOCAL_CHART_PATH}/charts"
+
+          while IFS=$'\t' read -r NAME VERSION REPOSITORY CONDITION; do
+            if [ -z "${NAME}" ] || [ "${NAME}" = "null" ]; then
+              continue
+            fi
+
+            if [ -z "${VERSION}" ] || [ "${VERSION}" = "null" ]; then
+              echo "Dependency version is missing for ${NAME}"
+              exit 1
+            fi
+
+            if [ -z "${REPOSITORY}" ] || [ "${REPOSITORY}" = "null" ]; then
+              echo "Dependency repository is missing for ${NAME}"
+              exit 1
+            fi
+
+            helm repo add "${NAME}-repo" "${REPOSITORY}" --force-update >/dev/null 2>&1 || helm repo add "${NAME}-repo" "${REPOSITORY}"
+            helm repo update >/dev/null 2>&1 || true
+
+            AVAILABLE_VERSION="$(helm search repo "${NAME}-repo/${NAME}" --versions -o json | jq -r '.[0].version // ""')"
+
+            if [ -z "${AVAILABLE_VERSION}" ]; then
+              echo "No versions available for dependency ${NAME} from ${REPOSITORY}"
+              exit 1
+            fi
+
+            helm pull "${NAME}-repo/${NAME}" --version "${AVAILABLE_VERSION}" --destination "${LOCAL_CHART_PATH}/charts"
+
+            if [ -n "${CONDITION}" ] && [ "${CONDITION}" != "null" ]; then
+              yq -i '
+                (.dependencies[] | select(.name == "'"${NAME}"'") | .version) = "'"${AVAILABLE_VERSION}"'" |
+                (.dependencies[] | select(.name == "'"${NAME}"'") | .repository) = "file://charts"
+              ' "${CHART_FILE}"
+            else
+              yq -i '
+                (.dependencies[] | select(.name == "'"${NAME}"'") | .version) = "'"${AVAILABLE_VERSION}"'" |
+                (.dependencies[] | select(.name == "'"${NAME}"'") | .repository) = "file://charts"
+              ' "${CHART_FILE}"
+            fi
+          done < <(yq -r '.dependencies[] | [.name, .version, .repository, (.condition // "")] | @tsv' "${CHART_FILE}")
+
+      - name: Build chart metadata
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          helm dependency build "${LOCAL_CHART_PATH}"
 
       - name: Lint chart
         if: steps.detect_changes.outputs.changed == 'true'
