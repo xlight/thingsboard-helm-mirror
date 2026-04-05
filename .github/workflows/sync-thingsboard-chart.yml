@@ -63,16 +63,30 @@ jobs:
         id: detect_changes
         run: |
           set -euo pipefail
-          if git diff --quiet -- "${LOCAL_CHART_PATH}"; then
-            echo "changed=false" >> "${GITHUB_OUTPUT}"
-          else
-            echo "changed=true" >> "${GITHUB_OUTPUT}"
+
+          CHART_SOURCE_CHANGED="false"
+          if ! git diff --quiet -- "${LOCAL_CHART_PATH}"; then
+            CHART_SOURCE_CHANGED="true"
           fi
+
+          PUBLISH_ARTIFACTS_MISSING="false"
+          if [ ! -f "${PAGES_DIR}/index.yaml" ] || ! find "${PAGES_DIR}" -maxdepth 1 -type f -name "${CHART_NAME}-*.tgz" | grep -q .; then
+            PUBLISH_ARTIFACTS_MISSING="true"
+          fi
+
+          if [ "${CHART_SOURCE_CHANGED}" = "true" ] || [ "${PUBLISH_ARTIFACTS_MISSING}" = "true" ]; then
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+          echo "chart_source_changed=${CHART_SOURCE_CHANGED}" >> "${GITHUB_OUTPUT}"
+          echo "publish_artifacts_missing=${PUBLISH_ARTIFACTS_MISSING}" >> "${GITHUB_OUTPUT}"
 
       - name: Stop early when no chart changes
         if: steps.detect_changes.outputs.changed != 'true'
         run: |
-          echo "No upstream chart changes detected. Skipping publish."
+          echo "No upstream chart changes detected and publish artifacts already exist. Skipping publish."
 
       - name: Prepare docs directory
         if: steps.detect_changes.outputs.changed == 'true'
@@ -100,14 +114,26 @@ jobs:
             EXISTING_VERSIONS=""
           fi
 
+          CURRENT_PACKAGES="$(find "${PAGES_DIR}" -maxdepth 1 -type f -name "${CHART_NAME}-*.tgz" -print 2>/dev/null || true)"
+
           TARGET_VERSION="${BASE_VERSION}"
 
-          if printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}"; then
-            NEXT_SUFFIX=1
-            while printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}-${NEXT_SUFFIX}"; do
-              NEXT_SUFFIX=$((NEXT_SUFFIX + 1))
-            done
-            TARGET_VERSION="${BASE_VERSION}-${NEXT_SUFFIX}"
+          if [ "${{ steps.detect_changes.outputs.chart_source_changed }}" = "true" ]; then
+            if printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}"; then
+              NEXT_SUFFIX=1
+              while printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}-${NEXT_SUFFIX}"; do
+                NEXT_SUFFIX=$((NEXT_SUFFIX + 1))
+              done
+              TARGET_VERSION="${BASE_VERSION}-${NEXT_SUFFIX}"
+            fi
+          else
+            if [ "${{ steps.detect_changes.outputs.publish_artifacts_missing }}" = "true" ] && printf '%s\n' "${EXISTING_VERSIONS}" | grep -Fxq "${BASE_VERSION}"; then
+              if printf '%s\n' "${CURRENT_PACKAGES}" | grep -Fq "${CHART_NAME}-${BASE_VERSION}.tgz"; then
+                TARGET_VERSION="${BASE_VERSION}-1"
+              else
+                TARGET_VERSION="${BASE_VERSION}"
+              fi
+            fi
           fi
 
           yq -i '.version = "'"${TARGET_VERSION}"'"' "${CHART_FILE}"
