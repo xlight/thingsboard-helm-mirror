@@ -204,7 +204,9 @@ jobs:
         if: steps.detect_changes.outputs.changed == 'true'
         run: |
           set -euo pipefail
-          helm lint "${LOCAL_CHART_PATH}"
+          helm lint "${LOCAL_CHART_PATH}" \
+            --set kafka.zookeeper.containerPorts.client=2181 \
+            --set kafka.service.ports.client=9092
 
       - name: Package chart
         if: steps.detect_changes.outputs.changed == 'true'
