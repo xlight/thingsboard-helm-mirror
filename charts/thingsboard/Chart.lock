@@ -10,6 +10,6 @@ dependencies:
   version: 32.4.3
 - name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 25.3.10
-digest: sha256:6a7fb921419799feade001cfa45d2544e2c7ebc276ea1156399daa36a6f2a246
-generated: "2026-04-12T03:03:01.855069353Z"
+  version: 25.3.11
+digest: sha256:7fc0e68125b0139c6ad334a72507814cd6edc869537cc1eb0444e3fb0087bf38
+generated: "2026-04-13T03:04:08.566304294Z"
