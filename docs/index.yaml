@@ -3,7 +3,7 @@ entries:
   thingsboard:
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.286563017Z"
+    created: "2026-04-15T03:03:08.890024662Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -29,7 +29,33 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.266056975Z"
+    created: "2026-04-15T03:03:08.705429062Z"
+    dependencies:
+    - name: postgresql-ha
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.3.2
+    - condition: cassandra.enabled
+      name: cassandra
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.3.11
+    - name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 32.4.3
+    - name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 25.3.11
+    description: A Helm chart for Thingsboard
+    digest: f92dc6d382642ce7a7bc2441cc41a0df7c53fabd0bd2a4341277da9b509de9d2
+    home: https://github.com/thingsboard/thingsboard-ce-k8s/
+    icon: https://avatars.githubusercontent.com/u/24291394?s=200&v=4
+    name: thingsboard
+    type: application
+    urls:
+    - https://xlight.github.io/thingsboard-helm-mirror/thingsboard-0.1.1-10.tgz
+    version: 0.1.1-10
+  - apiVersion: v2
+    appVersion: 3.4.0
+    created: "2026-04-15T03:03:08.869769862Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -55,7 +81,7 @@ entries:
     version: 0.1.1-9
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.245742848Z"
+    created: "2026-04-15T03:03:08.84858899Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -81,7 +107,7 @@ entries:
     version: 0.1.1-8
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.22508881Z"
+    created: "2026-04-15T03:03:08.828811863Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -107,7 +133,7 @@ entries:
     version: 0.1.1-7
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.20322244Z"
+    created: "2026-04-15T03:03:08.808142532Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -133,7 +159,7 @@ entries:
     version: 0.1.1-6
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.18092655Z"
+    created: "2026-04-15T03:03:08.787782198Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -159,7 +185,7 @@ entries:
     version: 0.1.1-5
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.159533664Z"
+    created: "2026-04-15T03:03:08.767434951Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -185,7 +211,7 @@ entries:
     version: 0.1.1-4
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.137923112Z"
+    created: "2026-04-15T03:03:08.747650102Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -211,7 +237,7 @@ entries:
     version: 0.1.1-3
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.116591939Z"
+    created: "2026-04-15T03:03:08.72572136Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -237,7 +263,7 @@ entries:
     version: 0.1.1-2
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-04-14T03:03:17.097216873Z"
+    created: "2026-04-15T03:03:08.68603239Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -261,4 +287,4 @@ entries:
     urls:
     - https://xlight.github.io/thingsboard-helm-mirror/thingsboard-0.1.1-1.tgz
     version: 0.1.1-1
-generated: "2026-04-14T03:03:17.068434878Z"
+generated: "2026-04-15T03:03:08.665746742Z"
