@@ -3,7 +3,7 @@ entries:
   thingsboard:
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.702297532Z"
+    created: "2026-11-05T02:05:51.367012125Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -29,7 +29,33 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.185782391Z"
+    created: "2026-11-05T02:05:49.502034139Z"
+    dependencies:
+    - name: postgresql-ha
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.3.2
+    - condition: cassandra.enabled
+      name: cassandra
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.3.11
+    - name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 32.4.3
+    - name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 28.3.12
+    description: A Helm chart for Thingsboard
+    digest: dafd7ffffa5bd5218ef26b770098df182ce6a0da193910a1fadea933a99c539e
+    home: https://github.com/thingsboard/thingsboard-ce-k8s/
+    icon: https://avatars.githubusercontent.com/u/24291394?s=200&v=4
+    name: thingsboard
+    type: application
+    urls:
+    - https://xlight.github.io/thingsboard-helm-mirror/thingsboard-0.1.1-214.tgz
+    version: 0.1.1-214
+  - apiVersion: v2
+    appVersion: 3.4.0
+    created: "2026-11-05T02:05:49.481539588Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -55,7 +81,7 @@ entries:
     version: 0.1.1-213
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.167820966Z"
+    created: "2026-11-05T02:05:49.459742478Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -81,7 +107,7 @@ entries:
     version: 0.1.1-212
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.150318448Z"
+    created: "2026-11-05T02:05:49.438245854Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -107,7 +133,7 @@ entries:
     version: 0.1.1-211
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.132903998Z"
+    created: "2026-11-05T02:05:49.417258942Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -133,7 +159,7 @@ entries:
     version: 0.1.1-210
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.099309829Z"
+    created: "2026-11-05T02:05:49.37564316Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -159,7 +185,7 @@ entries:
     version: 0.1.1-209
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.081456333Z"
+    created: "2026-11-05T02:05:49.353641949Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -185,7 +211,7 @@ entries:
     version: 0.1.1-208
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.064514569Z"
+    created: "2026-11-05T02:05:49.332148636Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -211,7 +237,7 @@ entries:
     version: 0.1.1-207
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.047108592Z"
+    created: "2026-11-05T02:05:49.311322195Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -237,7 +263,7 @@ entries:
     version: 0.1.1-206
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.030006862Z"
+    created: "2026-11-05T02:05:49.289344218Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -263,7 +289,7 @@ entries:
     version: 0.1.1-205
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.012061868Z"
+    created: "2026-11-05T02:05:49.26925387Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -289,7 +315,7 @@ entries:
     version: 0.1.1-204
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.995057409Z"
+    created: "2026-11-05T02:05:49.247951477Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -315,7 +341,7 @@ entries:
     version: 0.1.1-203
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.977757366Z"
+    created: "2026-11-05T02:05:49.226677538Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -341,7 +367,7 @@ entries:
     version: 0.1.1-202
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.960748056Z"
+    created: "2026-11-05T02:05:49.206054898Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -367,7 +393,7 @@ entries:
     version: 0.1.1-201
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.943719535Z"
+    created: "2026-11-05T02:05:49.184230203Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -393,7 +419,7 @@ entries:
     version: 0.1.1-200
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.892521763Z"
+    created: "2026-11-05T02:05:49.119995206Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -419,7 +445,7 @@ entries:
     version: 0.1.1-199
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.875320915Z"
+    created: "2026-11-05T02:05:49.099150752Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -445,7 +471,7 @@ entries:
     version: 0.1.1-198
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.858384543Z"
+    created: "2026-11-05T02:05:49.078798046Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -471,7 +497,7 @@ entries:
     version: 0.1.1-197
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.840080388Z"
+    created: "2026-11-05T02:05:49.057033766Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -497,7 +523,7 @@ entries:
     version: 0.1.1-196
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.823116321Z"
+    created: "2026-11-05T02:05:49.0356939Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -523,7 +549,7 @@ entries:
     version: 0.1.1-195
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.807146219Z"
+    created: "2026-11-05T02:05:49.014320728Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -549,7 +575,7 @@ entries:
     version: 0.1.1-194
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.789455829Z"
+    created: "2026-11-05T02:05:48.993906207Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -575,7 +601,7 @@ entries:
     version: 0.1.1-193
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.771987321Z"
+    created: "2026-11-05T02:05:48.972859726Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -601,7 +627,7 @@ entries:
     version: 0.1.1-192
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.755852733Z"
+    created: "2026-11-05T02:05:48.951207698Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -627,7 +653,7 @@ entries:
     version: 0.1.1-191
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.739043248Z"
+    created: "2026-11-05T02:05:48.930927534Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -653,7 +679,7 @@ entries:
     version: 0.1.1-190
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.704634485Z"
+    created: "2026-11-05T02:05:48.887591595Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -679,7 +705,7 @@ entries:
     version: 0.1.1-189
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.687123218Z"
+    created: "2026-11-05T02:05:48.866728836Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -705,7 +731,7 @@ entries:
     version: 0.1.1-188
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.669869845Z"
+    created: "2026-11-05T02:05:48.845446736Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -731,7 +757,7 @@ entries:
     version: 0.1.1-187
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.65251835Z"
+    created: "2026-11-05T02:05:48.824370268Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -757,7 +783,7 @@ entries:
     version: 0.1.1-186
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.635406955Z"
+    created: "2026-11-05T02:05:48.802226278Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -783,7 +809,7 @@ entries:
     version: 0.1.1-185
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.618560865Z"
+    created: "2026-11-05T02:05:48.780525984Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -809,7 +835,7 @@ entries:
     version: 0.1.1-184
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.600880649Z"
+    created: "2026-11-05T02:05:48.759840764Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -835,7 +861,7 @@ entries:
     version: 0.1.1-183
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.583482889Z"
+    created: "2026-11-05T02:05:48.738190857Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -861,7 +887,7 @@ entries:
     version: 0.1.1-182
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.566347954Z"
+    created: "2026-11-05T02:05:48.717472138Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -887,7 +913,7 @@ entries:
     version: 0.1.1-181
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.550052573Z"
+    created: "2026-11-05T02:05:48.695328479Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -913,7 +939,7 @@ entries:
     version: 0.1.1-180
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.515845899Z"
+    created: "2026-11-05T02:05:48.652620735Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -939,7 +965,7 @@ entries:
     version: 0.1.1-179
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.498410532Z"
+    created: "2026-11-05T02:05:48.631248717Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -965,7 +991,7 @@ entries:
     version: 0.1.1-178
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.480404386Z"
+    created: "2026-11-05T02:05:48.609565575Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -991,7 +1017,7 @@ entries:
     version: 0.1.1-177
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.463045299Z"
+    created: "2026-11-05T02:05:48.589041319Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1017,7 +1043,7 @@ entries:
     version: 0.1.1-176
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.445518719Z"
+    created: "2026-11-05T02:05:48.568109407Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1043,7 +1069,7 @@ entries:
     version: 0.1.1-175
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.42793873Z"
+    created: "2026-11-05T02:05:48.547707404Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1069,7 +1095,7 @@ entries:
     version: 0.1.1-174
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.410883099Z"
+    created: "2026-11-05T02:05:48.526555643Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1095,7 +1121,7 @@ entries:
     version: 0.1.1-173
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.39361892Z"
+    created: "2026-11-05T02:05:48.505982362Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1121,7 +1147,7 @@ entries:
     version: 0.1.1-172
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.376399147Z"
+    created: "2026-11-05T02:05:48.48484919Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1147,7 +1173,7 @@ entries:
     version: 0.1.1-171
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.358987376Z"
+    created: "2026-11-05T02:05:48.464326215Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1173,7 +1199,7 @@ entries:
     version: 0.1.1-170
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.32286701Z"
+    created: "2026-11-05T02:05:48.422596509Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1199,7 +1225,7 @@ entries:
     version: 0.1.1-169
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.305797895Z"
+    created: "2026-11-05T02:05:48.401272495Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1225,7 +1251,7 @@ entries:
     version: 0.1.1-168
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.289514998Z"
+    created: "2026-11-05T02:05:48.379434637Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1251,7 +1277,7 @@ entries:
     version: 0.1.1-167
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.27183993Z"
+    created: "2026-11-05T02:05:48.358473673Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1277,7 +1303,7 @@ entries:
     version: 0.1.1-166
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.254672511Z"
+    created: "2026-11-05T02:05:48.338236243Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1303,7 +1329,7 @@ entries:
     version: 0.1.1-165
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.236346053Z"
+    created: "2026-11-05T02:05:48.317155644Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1329,7 +1355,7 @@ entries:
     version: 0.1.1-164
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.21864148Z"
+    created: "2026-11-05T02:05:48.295790637Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1355,7 +1381,7 @@ entries:
     version: 0.1.1-163
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.201515338Z"
+    created: "2026-11-05T02:05:48.274748151Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1381,7 +1407,7 @@ entries:
     version: 0.1.1-162
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.184960343Z"
+    created: "2026-11-05T02:05:48.253342613Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1407,7 +1433,7 @@ entries:
     version: 0.1.1-161
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.167086159Z"
+    created: "2026-11-05T02:05:48.232705304Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1433,7 +1459,7 @@ entries:
     version: 0.1.1-160
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.133630796Z"
+    created: "2026-11-05T02:05:48.189592809Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1459,7 +1485,7 @@ entries:
     version: 0.1.1-159
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.116067226Z"
+    created: "2026-11-05T02:05:48.168533233Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1485,7 +1511,7 @@ entries:
     version: 0.1.1-158
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.099086359Z"
+    created: "2026-11-05T02:05:48.147518529Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1511,7 +1537,7 @@ entries:
     version: 0.1.1-157
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.082341526Z"
+    created: "2026-11-05T02:05:48.126555888Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1537,7 +1563,7 @@ entries:
     version: 0.1.1-156
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.064176626Z"
+    created: "2026-11-05T02:05:48.105597261Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1563,7 +1589,7 @@ entries:
     version: 0.1.1-155
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.047145492Z"
+    created: "2026-11-05T02:05:48.084250024Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1589,7 +1615,7 @@ entries:
     version: 0.1.1-154
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.030460931Z"
+    created: "2026-11-05T02:05:48.06240833Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1615,7 +1641,7 @@ entries:
     version: 0.1.1-153
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.012650824Z"
+    created: "2026-11-05T02:05:48.04115683Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1641,7 +1667,7 @@ entries:
     version: 0.1.1-152
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.995521544Z"
+    created: "2026-11-05T02:05:48.020119374Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1667,7 +1693,7 @@ entries:
     version: 0.1.1-151
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.979012831Z"
+    created: "2026-11-05T02:05:48.00009297Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1693,7 +1719,7 @@ entries:
     version: 0.1.1-150
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.944718519Z"
+    created: "2026-11-05T02:05:47.957430482Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1719,7 +1745,7 @@ entries:
     version: 0.1.1-149
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.927615072Z"
+    created: "2026-11-05T02:05:47.936574377Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1745,7 +1771,7 @@ entries:
     version: 0.1.1-148
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.909139429Z"
+    created: "2026-11-05T02:05:47.914966741Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1771,7 +1797,7 @@ entries:
     version: 0.1.1-147
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.890563951Z"
+    created: "2026-11-05T02:05:47.89330142Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1797,7 +1823,7 @@ entries:
     version: 0.1.1-146
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.874386638Z"
+    created: "2026-11-05T02:05:47.872008485Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1823,7 +1849,7 @@ entries:
     version: 0.1.1-145
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.856975097Z"
+    created: "2026-11-05T02:05:47.851450949Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1849,7 +1875,7 @@ entries:
     version: 0.1.1-144
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.839897162Z"
+    created: "2026-11-05T02:05:47.829276459Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1875,7 +1901,7 @@ entries:
     version: 0.1.1-143
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.823014984Z"
+    created: "2026-11-05T02:05:47.80871755Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1901,7 +1927,7 @@ entries:
     version: 0.1.1-142
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.804972773Z"
+    created: "2026-11-05T02:05:47.786769761Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1927,7 +1953,7 @@ entries:
     version: 0.1.1-141
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.787657121Z"
+    created: "2026-11-05T02:05:47.765473071Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1953,7 +1979,7 @@ entries:
     version: 0.1.1-140
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.753526501Z"
+    created: "2026-11-05T02:05:47.721691518Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -1979,7 +2005,7 @@ entries:
     version: 0.1.1-139
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.736692348Z"
+    created: "2026-11-05T02:05:47.700914753Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2005,7 +2031,7 @@ entries:
     version: 0.1.1-138
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.72046447Z"
+    created: "2026-11-05T02:05:47.6794125Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2031,7 +2057,7 @@ entries:
     version: 0.1.1-137
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.702243269Z"
+    created: "2026-11-05T02:05:47.658584547Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2057,7 +2083,7 @@ entries:
     version: 0.1.1-136
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.684601712Z"
+    created: "2026-11-05T02:05:47.637517606Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2083,7 +2109,7 @@ entries:
     version: 0.1.1-135
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.668211639Z"
+    created: "2026-11-05T02:05:47.616907762Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2109,7 +2135,7 @@ entries:
     version: 0.1.1-134
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.651370752Z"
+    created: "2026-11-05T02:05:47.594453793Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2135,7 +2161,7 @@ entries:
     version: 0.1.1-133
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.634886116Z"
+    created: "2026-11-05T02:05:47.573998247Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2161,7 +2187,7 @@ entries:
     version: 0.1.1-132
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.617676313Z"
+    created: "2026-11-05T02:05:47.552398504Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2187,7 +2213,7 @@ entries:
     version: 0.1.1-131
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.600046693Z"
+    created: "2026-11-05T02:05:47.527739037Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2213,7 +2239,7 @@ entries:
     version: 0.1.1-130
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.565531781Z"
+    created: "2026-11-05T02:05:47.48620963Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2239,7 +2265,7 @@ entries:
     version: 0.1.1-129
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.54837926Z"
+    created: "2026-11-05T02:05:47.464936469Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2265,7 +2291,7 @@ entries:
     version: 0.1.1-128
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.531210228Z"
+    created: "2026-11-05T02:05:47.443295056Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2291,7 +2317,7 @@ entries:
     version: 0.1.1-127
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.514178108Z"
+    created: "2026-11-05T02:05:47.422427834Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2317,7 +2343,7 @@ entries:
     version: 0.1.1-126
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.496991982Z"
+    created: "2026-11-05T02:05:47.401299969Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2343,7 +2369,7 @@ entries:
     version: 0.1.1-125
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.480092576Z"
+    created: "2026-11-05T02:05:47.380126466Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2369,7 +2395,7 @@ entries:
     version: 0.1.1-124
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.462133761Z"
+    created: "2026-11-05T02:05:47.358325329Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2395,7 +2421,7 @@ entries:
     version: 0.1.1-123
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.445301231Z"
+    created: "2026-11-05T02:05:47.33667197Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2421,7 +2447,7 @@ entries:
     version: 0.1.1-122
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.428097719Z"
+    created: "2026-11-05T02:05:47.315984948Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2447,7 +2473,7 @@ entries:
     version: 0.1.1-121
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.411054006Z"
+    created: "2026-11-05T02:05:47.293448034Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2473,7 +2499,7 @@ entries:
     version: 0.1.1-120
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.376367175Z"
+    created: "2026-11-05T02:05:47.251834976Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2499,7 +2525,7 @@ entries:
     version: 0.1.1-119
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.358664038Z"
+    created: "2026-11-05T02:05:47.230807585Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2525,7 +2551,7 @@ entries:
     version: 0.1.1-118
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.341583612Z"
+    created: "2026-11-05T02:05:47.209929326Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2551,7 +2577,7 @@ entries:
     version: 0.1.1-117
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.324000322Z"
+    created: "2026-11-05T02:05:47.189382738Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2577,7 +2603,7 @@ entries:
     version: 0.1.1-116
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.301181205Z"
+    created: "2026-11-05T02:05:47.16801383Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2603,7 +2629,7 @@ entries:
     version: 0.1.1-115
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.283598101Z"
+    created: "2026-11-05T02:05:47.147853832Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2629,7 +2655,7 @@ entries:
     version: 0.1.1-114
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.266576401Z"
+    created: "2026-11-05T02:05:47.126235068Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2655,7 +2681,7 @@ entries:
     version: 0.1.1-113
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.24920472Z"
+    created: "2026-11-05T02:05:47.105011278Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2681,7 +2707,7 @@ entries:
     version: 0.1.1-112
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.232147081Z"
+    created: "2026-11-05T02:05:47.084170791Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2707,7 +2733,7 @@ entries:
     version: 0.1.1-111
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.213677022Z"
+    created: "2026-11-05T02:05:47.063369692Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2733,7 +2759,7 @@ entries:
     version: 0.1.1-110
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.178608906Z"
+    created: "2026-11-05T02:05:47.021910259Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2759,7 +2785,7 @@ entries:
     version: 0.1.1-109
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.160880377Z"
+    created: "2026-11-05T02:05:47.000851822Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2785,7 +2811,7 @@ entries:
     version: 0.1.1-108
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.142911427Z"
+    created: "2026-11-05T02:05:46.981204709Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2811,7 +2837,7 @@ entries:
     version: 0.1.1-107
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.125786423Z"
+    created: "2026-11-05T02:05:46.959588298Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2837,7 +2863,7 @@ entries:
     version: 0.1.1-106
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.108717307Z"
+    created: "2026-11-05T02:05:46.938382325Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2863,7 +2889,7 @@ entries:
     version: 0.1.1-105
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.091798282Z"
+    created: "2026-11-05T02:05:46.917815251Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2889,7 +2915,7 @@ entries:
     version: 0.1.1-104
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.075357177Z"
+    created: "2026-11-05T02:05:46.89588394Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2915,7 +2941,7 @@ entries:
     version: 0.1.1-103
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.057534712Z"
+    created: "2026-11-05T02:05:46.874970984Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2941,7 +2967,7 @@ entries:
     version: 0.1.1-102
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.04062144Z"
+    created: "2026-11-05T02:05:46.854674891Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2967,7 +2993,7 @@ entries:
     version: 0.1.1-101
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.023525444Z"
+    created: "2026-11-05T02:05:46.832931425Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -2993,7 +3019,7 @@ entries:
     version: 0.1.1-100
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.684768683Z"
+    created: "2026-11-05T02:05:51.345063551Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3019,7 +3045,7 @@ entries:
     version: 0.1.1-99
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.667672217Z"
+    created: "2026-11-05T02:05:51.322968325Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3045,7 +3071,7 @@ entries:
     version: 0.1.1-98
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.649864319Z"
+    created: "2026-11-05T02:05:51.301645161Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3071,7 +3097,7 @@ entries:
     version: 0.1.1-97
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.63254695Z"
+    created: "2026-11-05T02:05:51.281378116Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3097,7 +3123,7 @@ entries:
     version: 0.1.1-96
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.615555881Z"
+    created: "2026-11-05T02:05:51.260470685Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3123,7 +3149,7 @@ entries:
     version: 0.1.1-95
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.599157361Z"
+    created: "2026-11-05T02:05:51.24032139Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3149,7 +3175,7 @@ entries:
     version: 0.1.1-94
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.581811309Z"
+    created: "2026-11-05T02:05:51.219379125Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3175,7 +3201,7 @@ entries:
     version: 0.1.1-93
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.564005668Z"
+    created: "2026-11-05T02:05:51.197574883Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3201,7 +3227,7 @@ entries:
     version: 0.1.1-92
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.546347486Z"
+    created: "2026-11-05T02:05:51.176275843Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3227,7 +3253,7 @@ entries:
     version: 0.1.1-91
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.529222926Z"
+    created: "2026-11-05T02:05:51.154723158Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3253,7 +3279,7 @@ entries:
     version: 0.1.1-90
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.495541062Z"
+    created: "2026-11-05T02:05:51.112316797Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3279,7 +3305,7 @@ entries:
     version: 0.1.1-89
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.478012515Z"
+    created: "2026-11-05T02:05:51.090534023Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3305,7 +3331,7 @@ entries:
     version: 0.1.1-88
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.460897029Z"
+    created: "2026-11-05T02:05:51.069136721Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3331,7 +3357,7 @@ entries:
     version: 0.1.1-87
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.442839186Z"
+    created: "2026-11-05T02:05:51.045446517Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3357,7 +3383,7 @@ entries:
     version: 0.1.1-86
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.42598954Z"
+    created: "2026-11-05T02:05:51.024763421Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3383,7 +3409,7 @@ entries:
     version: 0.1.1-85
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.409843825Z"
+    created: "2026-11-05T02:05:50.998857683Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3409,7 +3435,7 @@ entries:
     version: 0.1.1-84
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.391989988Z"
+    created: "2026-11-05T02:05:50.970110246Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3435,7 +3461,7 @@ entries:
     version: 0.1.1-83
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.374851638Z"
+    created: "2026-11-05T02:05:50.947646785Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3461,7 +3487,7 @@ entries:
     version: 0.1.1-82
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.357927881Z"
+    created: "2026-11-05T02:05:50.922673067Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3487,7 +3513,7 @@ entries:
     version: 0.1.1-81
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.340837883Z"
+    created: "2026-11-05T02:05:50.893769348Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3513,7 +3539,7 @@ entries:
     version: 0.1.1-80
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.306826724Z"
+    created: "2026-11-05T02:05:50.851269944Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3539,7 +3565,7 @@ entries:
     version: 0.1.1-79
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.289476945Z"
+    created: "2026-11-05T02:05:50.823645611Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3565,7 +3591,7 @@ entries:
     version: 0.1.1-78
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.272583494Z"
+    created: "2026-11-05T02:05:50.799756201Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3591,7 +3617,7 @@ entries:
     version: 0.1.1-77
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.254992409Z"
+    created: "2026-11-05T02:05:50.777182707Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3617,7 +3643,7 @@ entries:
     version: 0.1.1-76
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.237554853Z"
+    created: "2026-11-05T02:05:50.755090365Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3643,7 +3669,7 @@ entries:
     version: 0.1.1-75
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.220223372Z"
+    created: "2026-11-05T02:05:50.734749137Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3669,7 +3695,7 @@ entries:
     version: 0.1.1-74
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.202859973Z"
+    created: "2026-11-05T02:05:50.713479882Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3695,7 +3721,7 @@ entries:
     version: 0.1.1-73
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.185333078Z"
+    created: "2026-11-05T02:05:50.691750247Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3721,7 +3747,7 @@ entries:
     version: 0.1.1-72
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.167964508Z"
+    created: "2026-11-05T02:05:50.671220266Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3747,7 +3773,7 @@ entries:
     version: 0.1.1-71
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.150638259Z"
+    created: "2026-11-05T02:05:50.649075029Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3773,7 +3799,7 @@ entries:
     version: 0.1.1-70
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.115535276Z"
+    created: "2026-11-05T02:05:50.607678217Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3799,7 +3825,7 @@ entries:
     version: 0.1.1-69
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.098132333Z"
+    created: "2026-11-05T02:05:50.58658259Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3825,7 +3851,7 @@ entries:
     version: 0.1.1-68
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.080659219Z"
+    created: "2026-11-05T02:05:50.564506248Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3851,7 +3877,7 @@ entries:
     version: 0.1.1-67
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.06300719Z"
+    created: "2026-11-05T02:05:50.543741574Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3877,7 +3903,7 @@ entries:
     version: 0.1.1-66
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.045687157Z"
+    created: "2026-11-05T02:05:50.52020304Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3903,7 +3929,7 @@ entries:
     version: 0.1.1-65
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.028338426Z"
+    created: "2026-11-05T02:05:50.499105723Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3929,7 +3955,7 @@ entries:
     version: 0.1.1-64
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.010480207Z"
+    created: "2026-11-05T02:05:50.477913219Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3955,7 +3981,7 @@ entries:
     version: 0.1.1-63
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.993168776Z"
+    created: "2026-11-05T02:05:50.456760955Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -3981,7 +4007,7 @@ entries:
     version: 0.1.1-62
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.975780646Z"
+    created: "2026-11-05T02:05:50.435581916Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4007,7 +4033,7 @@ entries:
     version: 0.1.1-61
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.958291993Z"
+    created: "2026-11-05T02:05:50.413478236Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4033,7 +4059,7 @@ entries:
     version: 0.1.1-60
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.910620915Z"
+    created: "2026-11-05T02:05:50.371080185Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4059,7 +4085,7 @@ entries:
     version: 0.1.1-59
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.891357901Z"
+    created: "2026-11-05T02:05:50.350176443Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4085,7 +4111,7 @@ entries:
     version: 0.1.1-58
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.859914416Z"
+    created: "2026-11-05T02:05:50.328865322Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4111,7 +4137,7 @@ entries:
     version: 0.1.1-57
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.842393126Z"
+    created: "2026-11-05T02:05:50.307946811Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4137,7 +4163,7 @@ entries:
     version: 0.1.1-56
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.8246768Z"
+    created: "2026-11-05T02:05:50.285318489Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4163,7 +4189,7 @@ entries:
     version: 0.1.1-55
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.80741519Z"
+    created: "2026-11-05T02:05:50.263820817Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4189,7 +4215,7 @@ entries:
     version: 0.1.1-54
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.790306339Z"
+    created: "2026-11-05T02:05:50.242605611Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4215,7 +4241,7 @@ entries:
     version: 0.1.1-53
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.772561526Z"
+    created: "2026-11-05T02:05:50.222450337Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4241,7 +4267,7 @@ entries:
     version: 0.1.1-52
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.755197666Z"
+    created: "2026-11-05T02:05:50.201301236Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4267,7 +4293,7 @@ entries:
     version: 0.1.1-51
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.738462704Z"
+    created: "2026-11-05T02:05:50.179549839Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4293,7 +4319,7 @@ entries:
     version: 0.1.1-50
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.705398219Z"
+    created: "2026-11-05T02:05:50.136348036Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4319,7 +4345,7 @@ entries:
     version: 0.1.1-49
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.687634928Z"
+    created: "2026-11-05T02:05:50.114744608Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4345,7 +4371,7 @@ entries:
     version: 0.1.1-48
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.669743274Z"
+    created: "2026-11-05T02:05:50.094469745Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4371,7 +4397,7 @@ entries:
     version: 0.1.1-47
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.651985552Z"
+    created: "2026-11-05T02:05:50.074035695Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4397,7 +4423,7 @@ entries:
     version: 0.1.1-46
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.633864753Z"
+    created: "2026-11-05T02:05:50.052091232Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4423,7 +4449,7 @@ entries:
     version: 0.1.1-45
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.616141058Z"
+    created: "2026-11-05T02:05:50.030767477Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4449,7 +4475,7 @@ entries:
     version: 0.1.1-44
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.598325719Z"
+    created: "2026-11-05T02:05:50.010238887Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4475,7 +4501,7 @@ entries:
     version: 0.1.1-43
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.581679099Z"
+    created: "2026-11-05T02:05:49.988864024Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4501,7 +4527,7 @@ entries:
     version: 0.1.1-42
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.56476445Z"
+    created: "2026-11-05T02:05:49.967266913Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4527,7 +4553,7 @@ entries:
     version: 0.1.1-41
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.546992903Z"
+    created: "2026-11-05T02:05:49.945686Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4553,7 +4579,7 @@ entries:
     version: 0.1.1-40
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.512679202Z"
+    created: "2026-11-05T02:05:49.903378034Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4579,7 +4605,7 @@ entries:
     version: 0.1.1-39
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.49485548Z"
+    created: "2026-11-05T02:05:49.882974551Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4605,7 +4631,7 @@ entries:
     version: 0.1.1-38
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.477740131Z"
+    created: "2026-11-05T02:05:49.861223293Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4631,7 +4657,7 @@ entries:
     version: 0.1.1-37
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.461622341Z"
+    created: "2026-11-05T02:05:49.840258309Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4657,7 +4683,7 @@ entries:
     version: 0.1.1-36
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.443665389Z"
+    created: "2026-11-05T02:05:49.819651468Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4683,7 +4709,7 @@ entries:
     version: 0.1.1-35
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.426370934Z"
+    created: "2026-11-05T02:05:49.797468185Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4709,7 +4735,7 @@ entries:
     version: 0.1.1-34
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.409460327Z"
+    created: "2026-11-05T02:05:49.776396644Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4735,7 +4761,7 @@ entries:
     version: 0.1.1-33
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.391595393Z"
+    created: "2026-11-05T02:05:49.755833888Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4761,7 +4787,7 @@ entries:
     version: 0.1.1-32
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.374306437Z"
+    created: "2026-11-05T02:05:49.734588914Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4787,7 +4813,7 @@ entries:
     version: 0.1.1-31
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.357361849Z"
+    created: "2026-11-05T02:05:49.713337814Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4813,7 +4839,7 @@ entries:
     version: 0.1.1-30
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.32207912Z"
+    created: "2026-11-05T02:05:49.670871387Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4839,7 +4865,7 @@ entries:
     version: 0.1.1-29
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.304959038Z"
+    created: "2026-11-05T02:05:49.650580524Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4865,7 +4891,7 @@ entries:
     version: 0.1.1-28
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.288308716Z"
+    created: "2026-11-05T02:05:49.628790781Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4891,7 +4917,7 @@ entries:
     version: 0.1.1-27
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.271047702Z"
+    created: "2026-11-05T02:05:49.607583317Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4917,7 +4943,7 @@ entries:
     version: 0.1.1-26
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.254474343Z"
+    created: "2026-11-05T02:05:49.587536658Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4943,7 +4969,7 @@ entries:
     version: 0.1.1-25
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.236744983Z"
+    created: "2026-11-05T02:05:49.565532905Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4969,7 +4995,7 @@ entries:
     version: 0.1.1-24
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.219519117Z"
+    created: "2026-11-05T02:05:49.544085732Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -4995,7 +5021,7 @@ entries:
     version: 0.1.1-23
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.202720373Z"
+    created: "2026-11-05T02:05:49.523573855Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5021,7 +5047,7 @@ entries:
     version: 0.1.1-22
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.115810886Z"
+    created: "2026-11-05T02:05:49.395685558Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5047,7 +5073,7 @@ entries:
     version: 0.1.1-21
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.926752053Z"
+    created: "2026-11-05T02:05:49.162932073Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5073,7 +5099,7 @@ entries:
     version: 0.1.1-20
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.721755523Z"
+    created: "2026-11-05T02:05:48.908932353Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5099,7 +5125,7 @@ entries:
     version: 0.1.1-19
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.532265837Z"
+    created: "2026-11-05T02:05:48.673731008Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5125,7 +5151,7 @@ entries:
     version: 0.1.1-18
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.34134057Z"
+    created: "2026-11-05T02:05:48.443172769Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5151,7 +5177,7 @@ entries:
     version: 0.1.1-17
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.150012196Z"
+    created: "2026-11-05T02:05:48.211088153Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5177,7 +5203,7 @@ entries:
     version: 0.1.1-16
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.961856408Z"
+    created: "2026-11-05T02:05:47.978320433Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5203,7 +5229,7 @@ entries:
     version: 0.1.1-15
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.771224183Z"
+    created: "2026-11-05T02:05:47.743032159Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5229,7 +5255,7 @@ entries:
     version: 0.1.1-14
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.582801859Z"
+    created: "2026-11-05T02:05:47.507253267Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5255,7 +5281,7 @@ entries:
     version: 0.1.1-13
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.394159133Z"
+    created: "2026-11-05T02:05:47.271883589Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5281,7 +5307,7 @@ entries:
     version: 0.1.1-12
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.195462407Z"
+    created: "2026-11-05T02:05:47.042468072Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5307,7 +5333,7 @@ entries:
     version: 0.1.1-11
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:05.005563244Z"
+    created: "2026-11-05T02:05:46.81174876Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5333,7 +5359,7 @@ entries:
     version: 0.1.1-10
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.51308315Z"
+    created: "2026-11-05T02:05:51.133359959Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5359,7 +5385,7 @@ entries:
     version: 0.1.1-9
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.323965134Z"
+    created: "2026-11-05T02:05:50.872182207Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5385,7 +5411,7 @@ entries:
     version: 0.1.1-8
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:08.133221195Z"
+    created: "2026-11-05T02:05:50.627931332Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5411,7 +5437,7 @@ entries:
     version: 0.1.1-7
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.94044344Z"
+    created: "2026-11-05T02:05:50.39260694Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5437,7 +5463,7 @@ entries:
     version: 0.1.1-6
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.721494005Z"
+    created: "2026-11-05T02:05:50.158436798Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5463,7 +5489,7 @@ entries:
     version: 0.1.1-5
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.529719183Z"
+    created: "2026-11-05T02:05:49.924879331Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5489,7 +5515,7 @@ entries:
     version: 0.1.1-4
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:07.340507877Z"
+    created: "2026-11-05T02:05:49.692404863Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5515,7 +5541,7 @@ entries:
     version: 0.1.1-3
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:06.909653934Z"
+    created: "2026-11-05T02:05:49.142078325Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5541,7 +5567,7 @@ entries:
     version: 0.1.1-2
   - apiVersion: v2
     appVersion: 3.4.0
-    created: "2026-11-04T02:05:04.98765809Z"
+    created: "2026-11-05T02:05:46.79016214Z"
     dependencies:
     - name: postgresql-ha
       repository: https://charts.bitnami.com/bitnami
@@ -5565,4 +5591,4 @@ entries:
     urls:
     - https://xlight.github.io/thingsboard-helm-mirror/thingsboard-0.1.1-1.tgz
     version: 0.1.1-1
-generated: "2026-11-04T02:05:04.968824138Z"
+generated: "2026-11-05T02:05:46.768299355Z"
